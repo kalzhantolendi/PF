@@ -1,0 +1,556 @@
+<!--DOCTYPE html-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--==title========================-->
+    <title>Medical Website HTML</title>
+    <!--==Fav-icon=====================-->
+    <link rel="shortcut icon" href="images/fav-icon.png">
+    <!--==CSS==========================-->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!--==Font-Awesome-for-icons=====-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <style>
+        *{
+            background-color: #fff;
+  margin: 0px;
+  padding: 0px;
+  font-family: poppins;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+a{
+  text-decoration: none;
+}
+ul{
+  list-style: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(233, 233, 233); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(56, 56, 56); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #1b1b1b; 
+}
+/*==hero========================*/
+#hero{
+  min-height: 600px;
+  background-color: #f5f7fb;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.navigation{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0px auto;
+  padding: 30px 0px;
+}
+
+
+.menu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: auto;
+  margin-left: 40px;
+}
+.menu li a{
+  margin: 0px 20px;
+  color: #303030;
+  font-weight: 500;
+  transition: all ease 0.3s;
+}
+.menu li a:hover{
+  color: #7265E3;
+}
+.nav-appointment-btn{
+  height: 45px;
+  padding: 0px 20px;
+  border-radius:4px;
+  background-color: #7265E3;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+
+
+
+
+@media(max-width:1050px){
+  .hero-content{
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      margin: 50px auto;
+  }
+  .hero-text{
+      margin-bottom: 40px;
+      background-color: #ffffff;
+      padding: 30px;
+      margin-top: 0px;
+  }
+}
+@media(max-width:950px){
+  .navigation{
+      justify-content: space-between;
+      padding: 30px 0px;
+      position: relative;
+      width: 100%;
+      padding: 20px;
+  }
+  .logo,
+  .nav-appointment-btn{
+      z-index: 103;
+  }
+  .logo{
+      margin-right: auto;
+      margin-left: 20px;
+  }
+  .navigation .menu{
+      display: none;
+      position: absolute;
+      left: 0px;
+      top:100%;
+      background-color: #ffffff;
+      width: 100%;
+      padding: 0px;
+      margin: 0px;
+      z-index: 102;
+      box-shadow: 2px 30px 30px rgba(0,0,0,0.06);
+  }
+  .navigation .menu::after{
+      content: '';
+      position: absolute;
+      left: 0px;
+      top: -100%;
+      background-color: #ffffff;
+      width: 100%;
+      height: 100%;
+  }
+  .navigation .menu li{
+      width:100%;
+      margin: 0px;
+      padding: 0px;
+  }
+  .navigation .menu li a{
+      width: 100%;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      margin: 0px;
+      padding: 30px 20px;
+  }
+  .menu-icon{
+      display: block;
+  }
+  .navigation .menu-icon{
+      cursor: pointer;
+      float: right;
+      padding: 10px 0px;
+      position: relative;
+      user-select: none;
+      z-index: 106;
+  }
+  .navigation .menu-icon .nav-icon{
+      background-color: #181818;
+      display: block;
+      position: relative;
+      height: 2px;
+      transition: background 0.2s ease-out;
+      width: 25px;
+  }
+  .navigation .menu-icon .nav-icon::before,
+  .navigation .menu-icon .nav-icon::after{
+      background-color: #181818;
+      content: '';
+      position: absolute;
+      height: 100%;
+      transition: all ease-out 0.2s;
+      width: 100%;
+  }
+
+  .navigation .menu-icon .nav-icon::before{
+      top: 9px;
+  }
+  .navigation .menu-icon .nav-icon::after{
+      top: -9px;
+  }
+  .navigation .menu-icon:checked ~ .menu-icon .nav-icon,
+  .navigation .menu-btn:checked ~ .menu-icon .nav-icon{
+      background-color: transparent;
+  }
+  .navigation .menu-btn:checked ~ .menu-icon .nav-icon::before{
+      transform: rotate(-45deg);
+      top: 0px;
+  }
+  .navigation .menu-btn:checked ~ .menu-icon .nav-icon::after{
+      transform: rotate(45deg);
+      top: 0px;
+  }
+
+  .navigation .menu-btn:checked ~ .menu{
+      display: block;
+  }
+
+  .what-we-provide{
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
+  }
+  #our_story{
+      grid-template-columns: 1fr;
+  }
+  .our-story-img img{
+      max-height: 400px;
+  }
+  .our-stroy-text{
+      padding: 30px;
+  }
+  #why-choose-us{
+      grid-template-columns: 1fr;
+  }
+  .testimonials-content{
+      grid-template-columns: 1fr;
+  }
+  .testimonials-img{
+      margin-right: auto;
+  }
+  .testimonials-img img{
+      width: 100%;
+  }
+}
+
+
+.logo-container {
+    width: 100%;
+    gap: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    background: #fff;
+    padding: 10px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.logo-slider {
+    display: flex;
+    gap: 30px;
+    animation: scroll 10s linear infinite;
+}
+
+.logo-slider img {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s;
+}
+
+.logo-slider img:hover {
+    transform: scale(1.1);
+}
+
+/* Keyframe animation for smooth scrolling */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Section Styling */
+.services-section {
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    gap: 40px;
+    flex-wrap: wrap;
+
+}
+
+h2 {
+    font-size: 2.5em;
+    color:#7265E3;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #777;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 1s ease-out 0.3s, transform 1s ease-out 0.3s;
+}
+
+/* Services Container */
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Text Container */
+.services-text {
+    flex: 1;
+    max-width: 300px;
+    text-align: left;
+    opacity: 0;
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.slide-left {
+    transform: translateX(-50px);
+}
+
+.slide-right {
+    transform: translateX(50px);
+}
+
+.service {
+    margin-bottom: 20px;
+    gap: 40px;
+}
+
+.service h3 {
+    font-size: 1.4em;
+    color: #7265E3;
+}
+
+.service p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Doctor Image */
+.doctor-image {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.doctor-image img {
+    max-width: 280px;
+    height: auto;
+}
+
+/* Hover Animations */
+.service:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Show Animations */
+.fade-in.show,
+.subtitle.show,
+.slide-left.show,
+.slide-right.show,
+.doctor-image.show {
+    opacity: 1;
+    transform: translateX(0) translateY(0) scale(1);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .services-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .services-text {
+        max-width: 100%;
+    }
+    
+    .doctor-image img {
+        max-width: 200px;
+    }
+}
+
+
+
+    </style>
+
+</head>
+<body>
+    
+    <!--==Hero-Section========================-->
+    <section id="hero">
+
+        <!--==navigation====================-->
+        <nav class="navigation">
+            <!--**menu-btn*****-->
+            <input type="checkbox" class="menu-btn" id="menu-btn">
+            <label for="menu-btn" class="menu-icon">
+                <span class="nav-icon"></span>
+            </label>
+            <!--**logo*********-->
+            <a href="index.html" class="logo"><img src="./images/Group 19.png"  style="width: 150px; height: 50px;"></a>
+            <!--**menu*********-->
+            <ul class="menu">
+                <li><a href="https://www.figma.com/proto/Vz0j405KiogrD1Efj1i5g3/Start-up-(INFOMATRIX)-project?node-id=0-1&p=f&t=WiCp4QZMdlpXfmiG-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A1346">Get the App</a></li>
+                <li><a href="https://qomek.net/kz-ru/almaty/clinic/list">Our Services</a></li>
+                <li><a href="#testimonials">Testimonial's</a></li>
+            </ul>
+            <!--**contact*******-->
+            <a href="./index2.html" class="nav-appointment-btn">use your account</a>
+        </nav><!--nav-end-->
+
+    <img src="./images/Screenshot 2025-03-07 125933.png" alt="" style="padding: 60px;">
+  <h1 style="text-align: center; padding: 20px; color: #7265E3; margin-top: -20px;">Partnership</h1>
+    <div class="logo-container">
+        <div class="logo-slider">
+            <img src="https://res.cloudinary.com/vistaprint/images/w_1024,h_389,c_scale,w_848,h_322,dpr_1.5/f_auto,q_auto/v1719942405/ideas-and-advice-prod/blogadmin/nike-logo/nike-logo.png?_i=AA" alt="Company 1">
+            <img src="https://res.cloudinary.com/vistaprint/images/c_scale,w_848,h_277,dpr_1.5/f_auto,q_auto/v1706089184/ideas-and-advice-prod/en-us/Coca-Cola_logo.svg_/Coca-Cola_logo.svg_.png?_i=AA" alt="Company 2">
+            <img src="https://res.cloudinary.com/vistaprint/images/c_scale,w_448,h_204,dpr_1.5/f_auto,q_auto/v1719942403/ideas-and-advice-prod/blogadmin/nasa-logo/nasa-logo.png?_i=AA" alt="Company 3">
+            <img src="https://res.cloudinary.com/vistaprint/images/c_scale,w_693,h_319,dpr_1.5/f_auto,q_auto/v1719942391/ideas-and-advice-prod/blogadmin/ibm-logo/ibm-logo.png?_i=AA" alt="Company 4">
+            <img src="https://res.cloudinary.com/vistaprint/images/w_1024,h_549,c_scale,w_848,h_453,dpr_1.5/f_auto,q_auto/v1719942407/ideas-and-advice-prod/blogadmin/olympics-logo/olympics-logo.png?_i=AA" alt="Company 5">
+            <img src="https://res.cloudinary.com/vistaprint/images/w_1024,h_309,c_scale,w_848,h_256,dpr_1.5/f_auto,q_auto/v1719942376/ideas-and-advice-prod/blogadmin/amazon-logo/amazon-logo.png?_i=AA" alt="Company 6">
+            <img src="https://blogadmin.merch.vpsvc.com/hub/wp-content/uploads/2024/07/google-animated-logo-1.gif" alt="Company 6">
+            <img src="https://qomek.net/_next/static/media/logo.08346097.png" alt="Company 6">
+        </div>
+    </div>
+    
+        
+    
+
+
+
+
+
+
+
+    
+        <section class="services-section">
+            <h2 class="fade-in">Our Services</h2>
+            <p class="subtitle fade-in">Learn more about the various services offered by Our Clinic and how we provide you with world-class care.</p>
+    
+            <div class="services-container">
+                <div class="services-text slide-left">
+                    <div class="service">
+                        <h3>Echocardiograms</h3>
+                        <p>Associates are able to view the beating of the heart and many of its structures.</p>
+                    </div>
+                    <div class="service">
+                        <h3>Pediatric Services</h3>
+                        <p>If you are expecting a child, follow-up care with our clinic pediatricians can be arranged prior to or after your hospital/birth discharge.</p>
+                    </div>
+                    <div class="service">
+                        <h3>Women's Healthcare</h3>
+                        <p>Women's health is a field covering the numerous health concerns that women face, from reproductive and sexual health to mammograms.</p>
+                    </div>
+                </div>
+    
+                <div class="doctor-image zoom-in">
+                    <img src="./images/Screenshot 2025-03-08 031348.png" alt="Doctor">
+                </div>
+    
+                <div class="services-text slide-right">
+                    <div class="service">
+                        <h3>Dermatology</h3>
+                        <p>Our providers are trained to handle a spectrum of skin conditions, covering the majority of your dermatology needs.</p>
+                    </div>
+                    <div class="service">
+                        <h3>Laboratory Testing</h3>
+                        <p>Laboratory orders are created within the patient's electronic medical record (EHR) and transmitted to our laboratory.</p>
+                    </div>
+                    <div class="service">
+                        <h3>CT Scans</h3>
+                        <p>A CT scan (computed tomography) is a non-invasive procedure that allows providers to view 3D images from a series of 2D X-ray images.</p>
+                    </div>
+                </div>
+            </div>
+    
+
+
+
+
+        </section>
+        <script>const slider = document.querySelector('.logo-slider');
+
+            // Duplicate logos for infinite scroll effect
+            const logos = [...slider.children];
+            logos.forEach(logo => {
+                const clone = logo.cloneNode(true);
+                slider.appendChild(clone);
+            });
+
+
+            document.addEventListener("DOMContentLoaded", function () {
+    const fadeElements = document.querySelectorAll(".fade-in, .subtitle, .slide-left, .slide-right, .doctor-image");
+
+    function checkVisibility() {
+        fadeElements.forEach((element) => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                element.classList.add("show");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkVisibility);
+    checkVisibility(); // Run on load
+});
+
+
+
+
+
+            </script>
+        </body>
+        </html>
+    
